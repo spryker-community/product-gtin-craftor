@@ -9,7 +9,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "SprykerDev\\":"src/SprykerDev/"
+            "SprykerDev\\":"src/SprykerDev/",
+            "Generated\\": "src/Generated/"
         }
     },
     "authors": [
@@ -37,7 +38,8 @@
         "php": ">=8.0",
         "spryker/transfer": "^3.33.1",
         "valantic-spryker-eco/open-ai": "1.0.0",
-        "guzzlehttp/guzzle": "^7.8"
+        "guzzlehttp/guzzle": "^7.8",
+        "spryker/kernel": "^3.73"
     },
     "require-dev": {
         "spryker/code-sniffer": "^0.17.18",

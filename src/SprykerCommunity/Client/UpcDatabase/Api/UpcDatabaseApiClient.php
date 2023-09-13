@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * MIT License
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
 declare(strict_types=1);
 
 namespace SprykerCommunity\Client\UpcDatabase\Api;
@@ -52,7 +57,7 @@ class UpcDatabaseApiClient implements UpcDatabaseApiClientInterface
 
         return $this->upcDatabaseResponseMapper
             ->mapUpcDatabaseResponseToUpcResponseTransfer(
-                json_decode($response->getBody()->getContents(), true)
+                json_decode($response->getBody()->getContents(), true),
             );
     }
 }

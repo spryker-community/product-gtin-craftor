@@ -2,6 +2,13 @@
 
 namespace SprykerCommunity\Client\UpcDatabase\Api;
 
+/**
+ * MIT License
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
+namespace Pyz\Client\UpcDatabase\Api;
+
 use Generated\Shared\Transfer\UpcRequestTransfer;
 use Generated\Shared\Transfer\UpcResponseTransfer;
 
