@@ -72,19 +72,25 @@ class ProductCraftor implements ProductCraftorInterface
 
         $productAbstractTransfer->addPrice($priceProductTransfer);
 
-        //$productAbstractTransfer = $this->upcRetriever->retrieveProductData($productAbstractTransfer);
-        //$productAbstractTransfer = $this->openAirRetriever->retrieveProductData($productAbstractTransfer);
+        $productAbstractTransfer = $this->upcRetriever->retrieveProductData($productAbstractTransfer);
+        $productAbstractTransfer = $this->openAirRetriever->retrieveProductData($productAbstractTransfer);
 
         $idProductAbstract = $this->productFacade->createProductAbstract($productAbstractTransfer);
+
+        $priceProductTransfer = (new PriceProductTransfer())
+            ->setMoneyValue($moneyValueTransfer)
+            ->setPriceType($priceTypeTransfer);
+
         $productConcreteTransfer = (new ProductConcreteTransfer())
             ->setIsActive(true)
             ->addPrice($priceProductTransfer)
             ->setSku($productAbstractSku . '-1')
-            ->setFkProductAbstract($idProductAbstract);
+            ->setFkProductAbstract($idProductAbstract)
+            ->setLocalizedAttributes($productAbstractTransfer->getLocalizedAttributes());
 
         $this->productFacade
             ->createProductConcrete($productConcreteTransfer);
 
-        return $productAbstractTransfer->getIdProductAbstract();
+        return $idProductAbstract;
     }
 }
