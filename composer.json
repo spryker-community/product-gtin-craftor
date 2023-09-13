@@ -1,0 +1,11 @@
+{
+    "name": "spryker-community/product-gtin-craftor",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SprykerCommunity\\ProductGtinCraftor\\": "src/"
+        }
+    },
+    "require": {}
+}
