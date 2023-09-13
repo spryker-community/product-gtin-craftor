@@ -17,6 +17,14 @@ use SprykerCommunity\Zed\ProductGtinCraftor\ProductGtinCraftorDependencyProvider
 class ProductGtinCraftorBusinessFactory extends AbstractBusinessFactory
 {
 
+    public function createProductCraftor()
+    {
+
+    }
+
+    /**
+     * @return DataRetrieverInterface
+     */
     public function createOpenAiDataRetriever(): DataRetrieverInterface
     {
         return new OpenAiDataRetriever(
@@ -25,7 +33,7 @@ class ProductGtinCraftorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    public function createUpcDataRetriever()
+    public function createUpcDataRetriever(): DataRetrieverInterface
     {
         return new UpcDataRetriever(
             $this->getUpcClient(),
