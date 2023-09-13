@@ -26,7 +26,7 @@ $config[UpcDatabaseConstants::UPC_DATABASE_PRODUCT_ENDPOINT] = 'https://api.upcd
 $config[UpcDatabaseConstants::UPC_DATABASE_API_KEY] = 'A9BE6C4442AA0E897F26F0E31B578729';
 ```
 
-## Purpose
+**## Purpose
 Main focus of our product gtin creator is the data enrichment of products through different APIs.
 The enrichment is triggered through an input of a global trade item number(gtin)
 
@@ -40,4 +40,4 @@ This is interesting for small companies that do not have access to Pim or other 
 
 ### Future
 For the future multiple improvement or additions can be made.
-As an example we could connect an image service to get images or other specific attributes which are common for products. 
+As an example we could connect an image service to get images or other specific attributes which are common for products.** 
