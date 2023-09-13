@@ -4,9 +4,16 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "SprykerCommunity\\ProductGtinCraftor\\": "src/"
+            "SprykerCommunity\\": "src/SprykerCommunity/"
         }
     },
+    "authors": [
+        {
+            "name": "Moritz Jung",
+            "email": "moritz.jung@cec.valantic.com"
+        }
+    ],
+    "require": {},
     "require-dev": {
         "spryker/code-sniffer": "^0.17.18",
         "phpstan/phpstan": "^1.10",
