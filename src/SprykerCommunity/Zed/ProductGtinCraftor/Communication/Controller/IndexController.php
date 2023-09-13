@@ -30,14 +30,10 @@ class IndexController extends AbstractController
         $productGtinForm = $this->getFactory()->createProductGtinCraftorForm([])->handleRequest($request);
 
         if($productGtinForm->isSubmitted() && $productGtinForm->isValid()){
-            $productAbstract = new ProductAbstractTransfer();
-            $productAbstract->setGtin($productGtinForm->getData()['gtin']);
-            $productAbstract->setSku($productGtinForm->getData()['sku']);
-            $productAbstract=$this->getFacade()->expandProductAbstractWithGtinData($productAbstract);
-            $productAbstract=$this->getFacade()->expandProductAbstractWithOpenAIData($productAbstract);
-            $productAbstract=$this->getFacade()->expandProductAbsractWithLMIVData($productAbstract);
-            $productAbstract->setIdTaxSet(1);
-            $id=$this->getFactory()->getProductFacade()->createProductAbstract($productAbstract);
+            $gtin = $productGtinForm->getData()['gtin'];
+            $sku = $productGtinForm->getData()['sku'];
+
+            $id = $this->getFacade()->craftProduct($gtin, $sku);
 
             return $this->redirectResponse(sprintf('/product-management/edit?id-product-abstract=%s', $id));
         }

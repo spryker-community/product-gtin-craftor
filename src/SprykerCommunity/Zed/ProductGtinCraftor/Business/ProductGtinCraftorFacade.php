@@ -15,49 +15,14 @@ use Spryker\Zed\Kernel\Business\AbstractFacade;
  */
 class ProductGtinCraftorFacade extends AbstractFacade implements ProductGtinCraftorFacadeInterface
 {
-    /**
-     * {@inheritDoc}
-     *
-     * @api
-     *
-     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAbstractTransfer
-     */
-    public function expandProductAbstractWithGtinData(ProductAbstractTransfer $productAbstractTransfer): ProductAbstractTransfer
-    {
-        return $productAbstractTransfer;
-    }
 
     /**
-     * {@inheritDoc}
-     *
-     * @api
-     *
-     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAbstractTransfer
+     * @param string $gtin
+     * @param string $abstractSKU
+     * @param int|null $price
+     * @return int
      */
-    public function expandProductAbstractWithOpenAIData(ProductAbstractTransfer $productAbstractTransfer): ProductAbstractTransfer
-    {
-        return $productAbstractTransfer;
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * @api
-     *
-     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAbstractTransfer
-     */
-    public function expandProductAbsractWithLMIVData(ProductAbstractTransfer $productAbstractTransfer): ProductAbstractTransfer
-    {
-        return $productAbstractTransfer;
-    }
-
-    public function craftProduct(string $gtin, string $abstractSKU, ?int $price)
+    public function craftProduct(string $gtin, string $abstractSKU, ?int $price): int
     {
         return $this->getFactory()->createProductCraftor()->craftProduct($gtin, $abstractSKU, $price);
     }

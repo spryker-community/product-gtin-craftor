@@ -11,36 +11,13 @@ use Generated\Shared\Transfer\ProductAbstractTransfer;
 
 interface ProductGtinCraftorFacadeInterface
 {
-    /**
-     * Expands Product with GTIN Data
-     *
-     * @api
-     *
-     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAbstractTransfer
-     */
-    public function expandProductAbstractWithGtinData(ProductAbstractTransfer $productAbstractTransfer): ProductAbstractTransfer;
+
 
     /**
-     * Expands Product with OpenAI Data
-     *
-     * @api
-     *
-     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAbstractTransfer
+     * @param string $gtin
+     * @param string $abstractSKU
+     * @param int|null $price
+     * @return int
      */
-    public function expandProductAbstractWithOpenAIData(ProductAbstractTransfer $productAbstractTransfer): ProductAbstractTransfer;
-
-    /**
-     * Expands Product with LMIV Data
-     *
-     * @api
-     *
-     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAbstractTransfer
-     */
-    public function expandProductAbsractWithLMIVData(ProductAbstractTransfer $productAbstractTransfer): ProductAbstractTransfer;
+    public function craftProduct(string $gtin, string $abstractSKU, ?int $price): int;
 }

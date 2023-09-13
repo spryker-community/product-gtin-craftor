@@ -41,20 +41,19 @@ class ProductCraftor implements ProductCraftorInterface
      * @param string $gtin
      * @param string $productAbstractSku
      * @param int|null $price
-     * @return ProductAbstractTransfer
+     * @return int
      * @throws \Spryker\Zed\Product\Business\Exception\ProductAbstractExistsException
      */
-    public function craftProduct(string $gtin, string $productAbstractSku, ?int $price = 1): ProductAbstractTransfer
+    public function craftProduct(string $gtin, string $productAbstractSku, ?int $price = 1): int
     {
         $productAbstractTransfer = new ProductAbstractTransfer();
         $productAbstractTransfer->setGtin($gtin);
         $productAbstractTransfer->setSku($productAbstractSku);
+        $productAbstractTransfer->setIdTaxSet(1);
 
         $productAbstractTransfer = $this->upcRetriever->retrieveProductData($productAbstractTransfer);
         $productAbstractTransfer = $this->openAirRetriever->retrieveProductData($productAbstractTransfer);
 
-        $this->productFacade->createProductAbstract($productAbstractTransfer);
-
-        return $productAbstractTransfer;
+        return $this->productFacade->createProductAbstract($productAbstractTransfer);
     }
 }
