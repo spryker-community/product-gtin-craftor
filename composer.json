@@ -9,7 +9,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "SprykerDev\\":"src/SprykerDev/"
+            "SprykerDev\\":"src/SprykerDev/",
+            "Generated\\": "src/Generated/"
         }
     },
     "authors": [
@@ -35,7 +36,8 @@
     ],
     "require": {
         "spryker/transfer": "^3.33.1",
-        "valantic-spryker-eco/open-ai": "1.0.0"
+        "valantic-spryker-eco/open-ai": "1.0.0",
+        "spryker/kernel": "^3.73"
     },
     "require-dev": {
         "spryker/code-sniffer": "^0.17.18",
