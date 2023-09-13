@@ -39,7 +39,8 @@ class OpenAiDataRetriever implements DataRetrieverInterface
             $openAiResponse = $this->retrieveOpenAiResponse($localizedAttributes, $productAbstractTransfer);
 
             if (count($openAiResponse->getChoices()) > 0){
-                $localizedAttributes->setDescription(current($openAiResponse->getChoices()));
+                $value = current($openAiResponse->getChoices());
+                $localizedAttributes->setDescription($value['text']);
             }
         }
 
