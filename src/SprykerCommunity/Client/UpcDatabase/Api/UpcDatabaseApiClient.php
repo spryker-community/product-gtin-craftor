@@ -25,7 +25,7 @@ class UpcDatabaseApiClient implements UpcDatabaseApiClientInterface
 
     /**
      * @param \GuzzleHttp\ClientInterface $guzzleHttpClient
-     * @param \Pyz\Client\UpcDatabase\UpcDatabaseConfig $config
+     * @param \SprykerCommunity\Client\UpcDatabase\UpcDatabaseConfig $config
      */
     public function __construct(
         ClientInterface $guzzleHttpClient,
