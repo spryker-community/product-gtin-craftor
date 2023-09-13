@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
   pull_request:
   workflow_dispatch:
 
@@ -30,6 +30,7 @@ jobs:
 
   code-sniffer:
     name: code-sniffer
+    runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Code Sniffer
@@ -38,6 +39,7 @@ jobs:
   phpstan:
     name: phpstan
     needs: build
+    runs-on: ubuntu-latest
     steps:
       - name: PHPStan
         run: composer phpstan
@@ -45,6 +47,7 @@ jobs:
   phplint:
     name: phplint
     needs: build
+    runs-on: ubuntu-latest
     steps:
       - name: PHPLint
         run: composer phplint
