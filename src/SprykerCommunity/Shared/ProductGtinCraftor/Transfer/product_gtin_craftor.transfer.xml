@@ -4,7 +4,19 @@
            xsi:schemaLocation="spryker:transfer-01 http://static.spryker.com/transfer-01.xsd">
 
     <transfer name="ProductAbstract">
+        <property name="localizedAttributes" type="LocalizedAttributes[]" singular="localizedAttributes"/>
+
         <property name="gtin" type="string"/>
+
+        <property name="upcBrand" type="string"/>
+        <property name="upcManufacturer" type="string"/>
+        <property name="upcCategory" type="string"/>
+    </transfer>
+
+    <transfer name="LocalizedAttributes">
+        <property name="locale" type="Locale"/>
+        <property name="name" type="string"/>
+        <property name="description" type="string"/>
     </transfer>
 
 </transfers>

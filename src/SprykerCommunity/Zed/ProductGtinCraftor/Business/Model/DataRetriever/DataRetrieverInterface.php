@@ -11,5 +11,6 @@ interface DataRetrieverInterface
      * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
      * @return \Generated\Shared\Transfer\ProductAbstractTransfer
      */
-    public function retrieveProductData(ProductAbstractTransfer $productAbstractTransfer);
+    public function retrieveProductData(ProductAbstractTransfer $productAbstractTransfer): ProductAbstractTransfer;
+
 }

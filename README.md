@@ -1,4 +1,21 @@
-# product-gtin-craftor
+# spryker-community/product-gtin-craftor
+
+## OpenAI
+
+Update your shared config
+```
+use ValanticSpryker\Shared\OpenAi\OpenAiConstants;
+...
+
+$config[KernelConstants::CORE_NAMESPACES]  = [
+    'ValanticSpryker',
+    'SprykerCommunity',
+    ...
+];
+
+...
+$config[OpenAiConstants::OPENAI_API_KEY] = 'xxxxxx';
+```
 
 ## UPC Database
 Update your shared config

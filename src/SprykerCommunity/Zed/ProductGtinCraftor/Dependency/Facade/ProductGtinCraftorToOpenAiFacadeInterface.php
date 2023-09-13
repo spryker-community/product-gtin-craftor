@@ -2,6 +2,12 @@
 
 namespace SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade;
 
+use Generated\Shared\Transfer\OpenAiAssignEventToPromptRequestTransfer;
+use Generated\Shared\Transfer\OpenAiCreateResponseTransfer;
+use Generated\Shared\Transfer\OpenAiExecuteRequestTransfer;
+use Generated\Shared\Transfer\OpenAiPromptCriteriaTransfer;
+use Generated\Shared\Transfer\OpenAiPromptTransfer;
+
 interface ProductGtinCraftorToOpenAiFacadeInterface
 {
 
