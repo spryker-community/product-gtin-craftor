@@ -3,6 +3,7 @@
 namespace SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade;
 
 use Generated\Shared\Transfer\ProductAbstractTransfer;
+use Generated\Shared\Transfer\ProductConcreteTransfer;
 use Spryker\Zed\Product\Business\ProductFacadeInterface;
 
 class ProductGtinCraftorToProductFacadeBridge implements ProductGtinCraftorToProductFacadeBridgeInterface
@@ -51,7 +52,13 @@ class ProductGtinCraftorToProductFacadeBridge implements ProductGtinCraftorToPro
      *
      * @return int
      */
-    public function createProductAbstract(ProductAbstractTransfer $productAbstractTransfer){
+    public function createProductAbstract(ProductAbstractTransfer $productAbstractTransfer): int
+    {
         return $this->productFacade->createProductAbstract($productAbstractTransfer);
+    }
+
+    public function createProductConcrete(ProductConcreteTransfer $productConcreteTransfer): int
+    {
+        return $this->productFacade->createProductConcrete($productConcreteTransfer);
     }
 }

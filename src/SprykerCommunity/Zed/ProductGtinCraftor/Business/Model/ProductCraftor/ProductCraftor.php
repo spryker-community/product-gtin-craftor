@@ -7,6 +7,7 @@ use Generated\Shared\Transfer\MoneyValueTransfer;
 use Generated\Shared\Transfer\PriceProductTransfer;
 use Generated\Shared\Transfer\PriceTypeTransfer;
 use Generated\Shared\Transfer\ProductAbstractTransfer;
+use Generated\Shared\Transfer\ProductConcreteTransfer;
 use Spryker\Zed\Product\Business\ProductFacadeInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\DataRetrieverInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToProductFacadeBridgeInterface;
@@ -71,9 +72,19 @@ class ProductCraftor implements ProductCraftorInterface
 
         $productAbstractTransfer->addPrice($priceProductTransfer);
 
-        $productAbstractTransfer = $this->upcRetriever->retrieveProductData($productAbstractTransfer);
-        $productAbstractTransfer = $this->openAirRetriever->retrieveProductData($productAbstractTransfer);
+        //$productAbstractTransfer = $this->upcRetriever->retrieveProductData($productAbstractTransfer);
+        //$productAbstractTransfer = $this->openAirRetriever->retrieveProductData($productAbstractTransfer);
 
-        return $this->productFacade->createProductAbstract($productAbstractTransfer);
+        $idProductAbstract = $this->productFacade->createProductAbstract($productAbstractTransfer);
+        $productConcreteTransfer = (new ProductConcreteTransfer())
+            ->setIsActive(true)
+            ->addPrice($priceProductTransfer)
+            ->setSku($productAbstractSku . '-1')
+            ->setFkProductAbstract($idProductAbstract);
+
+        $this->productFacade
+            ->createProductConcrete($productConcreteTransfer);
+
+        return $productAbstractTransfer->getIdProductAbstract();
     }
 }
