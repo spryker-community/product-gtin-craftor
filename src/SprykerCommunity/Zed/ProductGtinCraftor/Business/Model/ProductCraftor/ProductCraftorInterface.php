@@ -1,6 +1,6 @@
 <?php
 
-namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\ProductCraftor;
+namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\ProductCraftor;
 
 interface ProductCraftorInterface
 {
