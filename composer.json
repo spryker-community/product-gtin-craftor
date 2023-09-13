@@ -36,6 +36,8 @@
         "composer-unused": "vendor/bin/composer-unused",
         "phplint": "vendor/bin/phplint ./ --exclude=vendor",
         "var-dump-check": "vendor/bin/var-dump-check --laravel --symfony --exclude vendor .",
+        "phpcs": "vendor/bin/phpcs",
+        "cs-fix": "vendor/bin/phpcbf",
         "ci": [
             "@phpstan-clear",
             "@phpstan",
@@ -43,7 +45,8 @@
             "@composer-unused",
             "composer dump-autoload -o",
             "@phplint",
-            "@var-dump-check"
+            "@var-dump-check",
+            "@phpcs"
         ]
     }
 }

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<ruleset name="SprykerProject">
+    <description>
+        Spryker Coding Standard for Project.
+
+        Extends main Spryker Coding Standard.
+        All sniffs in ./Sniffs will be auto loaded
+    </description>
+
+    <arg name="parallel" value="10"/>
+
+    <config name="php_version" value="80023"/>
+    <config name="testVersion" value="8.0-"/>
+
+    <file>src/</file>
+
+    <exclude-pattern>*/src/Generated/*</exclude-pattern>
+    <exclude-pattern>*/src/Orm/*/Base/</exclude-pattern>
+    <exclude-pattern>*/src/Orm/*/Map/</exclude-pattern>
+    <exclude-pattern>*/src/Orm/Propel/</exclude-pattern>
+    <exclude-pattern>*/tests/_support/_generated/*</exclude-pattern>
+    <exclude-pattern>*/tests/_helpers/*</exclude-pattern>
+    <exclude-pattern>*/tests/_output/*</exclude-pattern>
+    <exclude-pattern>*/tests/*</exclude-pattern>
+    <exclude-pattern>./docker/*</exclude-pattern>
+    <exclude-pattern>./data/cache/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>vendor/*</exclude-pattern>
+
+    <rule ref="SprykerStrict">
+        <exclude name="SlevomatCodingStandard.Functions.DisallowNamedArguments"/>
+        <exclude name="SlevomatCodingStandard.Functions.DisallowTrailingCommaInDeclaration"/>
+        <exclude name="SlevomatCodingStandard.Classes.DisallowConstructorPropertyPromotion"/>
+        <exclude name="SlevomatCodingStandard.ControlStructures.DisallowNullSafeObjectOperator"/>
+        <exclude name="Spryker.Testing.Mock.MissingReturnType" />
+    </rule>
+
+    <!-- Define your own sniffs here -->
+
+    <rule ref="Spryker.Internal.SprykerDisallowFunctions">
+        <properties>
+            <property name="phpVersion" value="8.0"/>
+        </properties>
+    </rule>
+
+    <rule ref="Spryker.MethodAnnotation.ConfigMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="SprykerCommunity,SprykerEco,SprykerMiddleware,SprykerSdk,Spryker" />
+        </properties>
+    </rule>
+    <rule ref="Spryker.MethodAnnotation.EntityManagerMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="SprykerCommunity,SprykerEco,SprykerMiddleware,SprykerSdk,Spryker" />
+        </properties>
+    </rule>
+    <rule ref="Spryker.MethodAnnotation.FacadeMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="SprykerCommunity,SprykerEco,SprykerMiddleware,SprykerSdk,Spryker" />
+        </properties>
+    </rule>
+    <rule ref="Spryker.MethodAnnotation.FactoryMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="SprykerCommunity,SprykerEco,SprykerMiddleware,SprykerSdk,Spryker" />
+        </properties>
+    </rule>
+    <rule ref="Spryker.MethodAnnotation.QueryContainerMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="SprykerCommunity,SprykerEco,SprykerMiddleware,SprykerSdk,Spryker" />
+        </properties>
+    </rule>
+    <rule ref="Spryker.MethodAnnotation.RepositoryMethodAnnotation">
+        <properties>
+            <property name="namespaces" value="SprykerCommunity,SprykerEco,SprykerMiddleware,SprykerSdk,Spryker" />
+        </properties>
+    </rule>
+
+</ruleset>
