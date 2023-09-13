@@ -5,6 +5,7 @@ namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\ProductCraftor;
 use Generated\Shared\Transfer\CurrencyTransfer;
 use Generated\Shared\Transfer\MoneyValueTransfer;
 use Generated\Shared\Transfer\PriceProductTransfer;
+use Generated\Shared\Transfer\PriceTypeTransfer;
 use Generated\Shared\Transfer\ProductAbstractTransfer;
 use Spryker\Zed\Product\Business\ProductFacadeInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\DataRetrieverInterface;
@@ -54,18 +55,19 @@ class ProductCraftor implements ProductCraftorInterface
         $productAbstractTransfer->setSku($productAbstractSku);
         $productAbstractTransfer->setIdTaxSet(1);
 
-        $currencyTransfer = (new CurrencyTransfer())
-            ->setIdCurrency(93);
+        $priceTypeTransfer = (new PriceTypeTransfer())
+            ->setIdPriceType(1)
+            ->setName('DEFAULT');
 
         $moneyValueTransfer = (new MoneyValueTransfer())
-            ->setCurrency($currencyTransfer)
+            ->setFkCurrency(93)
             ->setFkStore(1)
             ->setNetAmount($price)
             ->setGrossAmount($price);
 
         $priceProductTransfer = (new PriceProductTransfer())
             ->setMoneyValue($moneyValueTransfer)
-            ->setPriceTypeName('DEFAULT');
+            ->setPriceType($priceTypeTransfer);
 
         $productAbstractTransfer->addPrice($priceProductTransfer);
 

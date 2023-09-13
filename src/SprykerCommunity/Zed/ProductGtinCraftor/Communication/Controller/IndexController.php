@@ -32,8 +32,9 @@ class IndexController extends AbstractController
         if($productGtinForm->isSubmitted() && $productGtinForm->isValid()){
             $gtin = $productGtinForm->getData()['gtin'];
             $sku = $productGtinForm->getData()['sku'];
+            $price = $productGtinForm->getData()['price'];
 
-            $id = $this->getFacade()->craftProduct($gtin, $sku);
+            $id = $this->getFacade()->craftProduct($gtin, $sku, $price);
 
             return $this->redirectResponse(sprintf('/product-management/edit?id-product-abstract=%s', $id));
         }
