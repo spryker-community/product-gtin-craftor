@@ -2,6 +2,7 @@
     "name": "spryker-community/product-gtin-craftor",
     "type": "library",
     "license": "MIT",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "SprykerCommunity\\": "src/SprykerCommunity/"
@@ -28,7 +29,9 @@
             "name": "Alexander Ratajczak"
         }
     ],
-    "require": {},
+    "require": {
+        "valantic-spryker-eco/open-ai": "1.0.0"
+    },
     "require-dev": {
         "spryker/code-sniffer": "^0.17.18",
         "phpstan/phpstan": "^1.10",
@@ -47,7 +50,8 @@
     ],
     "config": {
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "php-http/discovery": false
         }
     },
     "scripts": {
