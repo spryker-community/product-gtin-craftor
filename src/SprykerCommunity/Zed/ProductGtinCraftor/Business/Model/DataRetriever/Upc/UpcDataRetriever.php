@@ -1,12 +1,12 @@
 <?php
 
-namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever\Upc;
+namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\Upc;
 
 use Generated\Shared\Transfer\LocalizedAttributesTransfer;
 use Generated\Shared\Transfer\ProductAbstractTransfer;
 use Generated\Shared\Transfer\UpcRequestTransfer;
 use Generated\Shared\Transfer\UpcResponseTransfer;
-use SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever\DataRetrieverInterface;
+use SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\DataRetrieverInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Client\ProductGtinCraftorToUpcDatabaseClientInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToLocaleFacadeInterface;
 

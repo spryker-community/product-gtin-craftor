@@ -1,6 +1,6 @@
 <?php
 
-namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever;
+namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever;
 
 use Generated\Shared\Transfer\ProductAbstractTransfer;
 

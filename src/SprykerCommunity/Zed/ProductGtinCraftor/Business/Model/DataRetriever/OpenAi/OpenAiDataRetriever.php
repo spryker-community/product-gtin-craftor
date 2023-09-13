@@ -1,12 +1,12 @@
 <?php
 
-namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever\OpenApi;
+namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\OpenApi;
 
 use Generated\Shared\Transfer\LocalizedAttributesTransfer;
 use Generated\Shared\Transfer\OpenAiCreateResponseTransfer;
 use Generated\Shared\Transfer\OpenAiExecuteRequestTransfer;
 use Generated\Shared\Transfer\ProductAbstractTransfer;
-use SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever\DataRetrieverInterface;
+use SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\DataRetrieverInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToOpenAiFacadeInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\ProductGtinCraftorConfigInterface;
 
