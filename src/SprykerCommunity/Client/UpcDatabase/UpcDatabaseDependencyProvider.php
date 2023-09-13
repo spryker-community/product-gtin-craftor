@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pyz\Client\UpcDatabase;
+namespace SprykerCommunity\Client\UpcDatabase;
 
 use GuzzleHttp\Client;
 use Spryker\Client\Kernel\AbstractDependencyProvider;

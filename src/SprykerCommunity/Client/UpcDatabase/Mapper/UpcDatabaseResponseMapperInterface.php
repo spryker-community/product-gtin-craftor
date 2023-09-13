@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pyz\Client\UpcDatabase\Mapper;
+namespace SprykerCommunity\Client\UpcDatabase\Mapper;
 
 use Generated\Shared\Transfer\UpcResponseTransfer;
 

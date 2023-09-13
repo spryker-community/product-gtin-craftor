@@ -1,6 +1,6 @@
 <?php
 
-namespace Pyz\Client\UpcDatabase\Api;
+namespace SprykerCommunity\Client\UpcDatabase\Api;
 
 use Generated\Shared\Transfer\UpcRequestTransfer;
 use Generated\Shared\Transfer\UpcResponseTransfer;

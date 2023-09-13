@@ -2,20 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Pyz\Client\UpcDatabase;
+namespace SprykerCommunity\Client\UpcDatabase;
 
 use GuzzleHttp\ClientInterface;
-use Pyz\Client\UpcDatabase\Api\UpcDatabaseApiClient;
-use Pyz\Client\UpcDatabase\Api\UpcDatabaseApiClientInterface;
-use Pyz\Client\UpcDatabase\Mapper\UpcDatabaseResponseMapper;
-use Pyz\Client\UpcDatabase\Mapper\UpcDatabaseResponseMapperInterface;
+use SprykerCommunity\Client\UpcDatabase\Api\UpcDatabaseApiClient;
+use SprykerCommunity\Client\UpcDatabase\Api\UpcDatabaseApiClientInterface;
+use SprykerCommunity\Client\UpcDatabase\Mapper\UpcDatabaseResponseMapper;
+use SprykerCommunity\Client\UpcDatabase\Mapper\UpcDatabaseResponseMapperInterface;
 use Spryker\Client\Kernel\AbstractFactory;
 
 /**
- * @method \Pyz\Client\UpcDatabase\UpcDatabaseConfig getConfig()
+ * @method \SprykerCommunity\Client\UpcDatabase\UpcDatabaseConfig getConfig()
  */
 class UpcDatabaseFactory extends AbstractFactory
 {
+    /**
+     * @return \SprykerCommunity\Client\UpcDatabase\Api\UpcDatabaseApiClientInterface
+     */
     public function createApiClient(): UpcDatabaseApiClientInterface
     {
         return new UpcDatabaseApiClient(
@@ -25,11 +28,17 @@ class UpcDatabaseFactory extends AbstractFactory
         );
     }
 
+    /**
+     * @return \GuzzleHttp\ClientInterface
+     */
     protected function getGuzzleHttpClient(): ClientInterface
     {
         return $this->getProvidedDependency(UpcDatabaseDependencyProvider::CLIENT_GUZZLE_HTTP);
     }
 
+    /**
+     * @return \SprykerCommunity\Client\UpcDatabase\Mapper\UpcDatabaseResponseMapperInterface
+     */
     protected function createUpcDatabaseResponseMapper(): UpcDatabaseResponseMapperInterface
     {
         return new UpcDatabaseResponseMapper();

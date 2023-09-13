@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pyz\Shared\UpcDatabase;
+namespace SprykerCommunity\Shared\UpcDatabase;
 
 /**
  * Declares global environment configuration keys. Do not use it for other class constants.
