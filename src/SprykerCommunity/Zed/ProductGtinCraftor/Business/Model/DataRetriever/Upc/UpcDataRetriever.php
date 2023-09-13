@@ -6,22 +6,22 @@ use Generated\Shared\Transfer\LocalizedAttributesTransfer;
 use Generated\Shared\Transfer\ProductAbstractTransfer;
 use Generated\Shared\Transfer\UpcRequestTransfer;
 use Generated\Shared\Transfer\UpcResponseTransfer;
-use SprykerCommunity\Client\UpcDatabase\UpcDatabaseClientInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever\DataRetrieverInterface;
+use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Client\ProductGtinCraftorToUpcDatabaseClientInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToLocaleFacadeInterface;
 
 class UpcDataRetriever implements DataRetrieverInterface
 {
 
-    protected UpcDatabaseClientInterface $upcDatabaseClient;
+    protected ProductGtinCraftorToUpcDatabaseClientInterface $upcDatabaseClient;
 
     protected ProductGtinCraftorToLocaleFacadeInterface $localeFacade;
 
     /**
-     * @param \SprykerCommunity\Client\UpcDatabase\UpcDatabaseClientInterface $upcDatabaseClient
+     * @param \SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Client\ProductGtinCraftorToUpcDatabaseClientInterface $upcDatabaseClient
      * @param \SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToLocaleFacadeInterface $localeFacade
      */
-    public function __construct(UpcDatabaseClientInterface $upcDatabaseClient, ProductGtinCraftorToLocaleFacadeInterface $localeFacade)
+    public function __construct(ProductGtinCraftorToUpcDatabaseClientInterface $upcDatabaseClient, ProductGtinCraftorToLocaleFacadeInterface $localeFacade)
     {
         $this->upcDatabaseClient = $upcDatabaseClient;
         $this->localeFacade = $localeFacade;
@@ -31,7 +31,7 @@ class UpcDataRetriever implements DataRetrieverInterface
      * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
      * @return \Generated\Shared\Transfer\ProductAbstractTransfer
      */
-    public function retrieveProductData(ProductAbstractTransfer $productAbstractTransfer)
+    public function retrieveProductData(ProductAbstractTransfer $productAbstractTransfer): ProductAbstractTransfer
     {
         $upcRequest = new UpcRequestTransfer();
         $upcRequest->setUpcNumber($productAbstractTransfer->getGtin());

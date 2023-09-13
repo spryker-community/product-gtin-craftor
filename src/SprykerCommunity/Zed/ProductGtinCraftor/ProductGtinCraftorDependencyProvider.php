@@ -4,6 +4,7 @@ namespace SprykerCommunity\Zed\ProductGtinCraftor;
 
 use Spryker\Zed\Kernel\AbstractBundleDependencyProvider;
 use Spryker\Zed\Kernel\Container;
+use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Client\ProductGtinCraftorToUpcDatabaseClientBridge;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToLocaleFacadeBridge;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToOpenAiFacadeBridge;
 
@@ -11,6 +12,7 @@ class ProductGtinCraftorDependencyProvider extends AbstractBundleDependencyProvi
 {
     const FACADE_OPEN_AI = 'FACADE_OPEN_AI';
     const FACADE_LOCALE = 'FACADE_LOCALE';
+    const CLIENT_UPC_DATABASE = 'CLIENT_UPC_DATABASE';
 
     public function provideBusinessLayerDependencies(Container $container)
     {
@@ -18,10 +20,14 @@ class ProductGtinCraftorDependencyProvider extends AbstractBundleDependencyProvi
 
         $this->addOpenAiFacade($container);
         $this->addLocaleFacade($container);
+        $this->addUpcDatabaseClient($container);
 
         return $container;
     }
 
+    /**
+     * @param Container $container
+     */
     protected function addOpenAiFacade(Container $container)
     {
         $container->set(static::FACADE_OPEN_AI, function (Container $container) {
@@ -29,6 +35,9 @@ class ProductGtinCraftorDependencyProvider extends AbstractBundleDependencyProvi
         });
     }
 
+    /**
+     * @param Container $container
+     */
     protected function addLocaleFacade(Container $container)
     {
         $container->set(static::FACADE_LOCALE, function (Container $container) {
@@ -36,4 +45,13 @@ class ProductGtinCraftorDependencyProvider extends AbstractBundleDependencyProvi
         });
     }
 
+    /**
+     * @param Container $container
+     */
+    protected function addUpcDatabaseClient(Container $container)
+    {
+        $container->set(static::CLIENT_UPC_DATABASE, function (Container $container) {
+            return new ProductGtinCraftorToUpcDatabaseClientBridge($container->getLocator()->upcDatabase()->client());
+        });
+    }
 }
