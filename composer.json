@@ -9,8 +9,23 @@
     },
     "authors": [
         {
+            "name": "Volodymyr Lunov"
+        },
+        {
             "name": "Moritz Jung",
             "email": "moritz.jung@cec.valantic.com"
+        },
+        {
+            "name": "Sven Adler"
+        },
+        {
+            "name": "Dennis Blümer"
+        },
+        {
+            "name": "Thomas Werth"
+        },
+        {
+            "name": "Alexander Ratajczak"
         }
     ],
     "require": {},
@@ -24,6 +39,12 @@
         "overtrue/phplint": "^9.0",
         "php-parallel-lint/php-var-dump-check": "^0.5.0"
     },
+    "repositories": [
+        {
+            "url": "https://github.com/valantic-CEC-Deutschland-GmbH/open-ai.git",
+            "type": "git"
+        }
+    ],
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
