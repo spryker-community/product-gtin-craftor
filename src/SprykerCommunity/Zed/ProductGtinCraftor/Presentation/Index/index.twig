@@ -1,0 +1,11 @@
+{% extends '@Gui/Layout/layout.twig' %}
+
+{% set widget_title = 'Product GTIN' | trans %}
+{% block section_title %}{{ widget_title }}{% endblock %}
+
+{% block content %}
+    {{ form_start(productGtinForm) }}
+    {{ form_widget(productGtinForm) }}
+    <input type="submit" class="btn btn-primary safe-submit" value="{{ 'Save' | trans }}" />
+    {{ form_end(productGtinForm) }}
+{% endblock %}

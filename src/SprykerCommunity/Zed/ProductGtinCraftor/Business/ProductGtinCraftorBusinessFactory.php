@@ -13,6 +13,7 @@ use SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\ProductCraftor\Produc
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Client\ProductGtinCraftorToUpcDatabaseClientInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToLocaleFacadeInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToOpenAiFacadeInterface;
+use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToProductFacadeBridgeInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\ProductGtinCraftorDependencyProvider;
 
 /**
@@ -64,7 +65,7 @@ class ProductGtinCraftorBusinessFactory extends AbstractBusinessFactory
         return $this->getProvidedDependency(ProductGtinCraftorDependencyProvider::FACADE_LOCALE);
     }
 
-    protected function getProductFacade(): ProductFacadeInterface
+    public function getProductFacade(): ProductGtinCraftorToProductFacadeBridgeInterface
     {
         return $this->getProvidedDependency(ProductGtinCraftorDependencyProvider::FACADE_PRODUCT);
     }

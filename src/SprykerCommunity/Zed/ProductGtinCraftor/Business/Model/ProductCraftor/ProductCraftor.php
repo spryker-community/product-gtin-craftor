@@ -5,6 +5,7 @@ namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\ProductCraftor;
 use Generated\Shared\Transfer\ProductAbstractTransfer;
 use Spryker\Zed\Product\Business\ProductFacadeInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\DataRetrieverInterface;
+use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToProductFacadeBridgeInterface;
 
 class ProductCraftor implements ProductCraftorInterface
 {
@@ -29,7 +30,7 @@ class ProductCraftor implements ProductCraftorInterface
      * @param DataRetrieverInterface $openAirRetriever
      * @param ProductFacadeInterface $productFacade
      */
-    public function __construct(DataRetrieverInterface $upcRetriever, DataRetrieverInterface $openAirRetriever, ProductFacadeInterface $productFacade)
+    public function __construct(DataRetrieverInterface $upcRetriever, DataRetrieverInterface $openAirRetriever, ProductGtinCraftorToProductFacadeBridgeInterface $productFacade)
     {
         $this->upcRetriever = $upcRetriever;
         $this->openAirRetriever = $openAirRetriever;

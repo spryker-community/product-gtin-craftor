@@ -6,8 +6,11 @@
     <transfer name="ProductAbstract">
         <property name="localizedAttributes" type="LocalizedAttributes[]" singular="localizedAttributes"/>
 
+        <property name="idProductAbstract" type="int"/>
+
         <property name="gtin" type="string"/>
         <property name="sku" type="string"/>
+        <property name="idTaxSet" type="int"/>
 
         <property name="upcBrand" type="string"/>
         <property name="upcManufacturer" type="string"/>
