@@ -1,6 +1,6 @@
 <?php
 
-namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\OpenApi;
+namespace SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\OpenAi;
 
 use Generated\Shared\Transfer\LocalizedAttributesTransfer;
 use Generated\Shared\Transfer\OpenAiCreateResponseTransfer;

@@ -5,7 +5,7 @@ namespace SprykerCommunity\Zed\ProductGtinCraftor\Business;
 use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
 use Spryker\Zed\Product\Business\ProductFacadeInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\DataRetrieverInterface;
-use SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\OpenApi\OpenAiDataRetriever;
+use SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\OpenAi\OpenAiDataRetriever;
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\DataRetriever\Upc\UpcDataRetriever;
 
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\Model\ProductCraftor\ProductCraftor;
