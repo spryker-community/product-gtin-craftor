@@ -2,10 +2,14 @@
     "name": "spryker-community/product-gtin-craftor",
     "type": "library",
     "license": "MIT",
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "SprykerCommunity\\": "src/SprykerCommunity/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SprykerDev\\":"src/SprykerDev/"
         }
     },
     "authors": [
@@ -30,18 +34,22 @@
         }
     ],
     "require": {
+        "spryker/transfer": "^3.33.1",
         "valantic-spryker-eco/open-ai": "1.0.0"
     },
     "require-dev": {
         "spryker/code-sniffer": "^0.17.18",
-        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan": "^1.10.34",
         "icanhazstring/composer-unused": "^0.8.10",
         "maglnet/composer-require-checker": "^4.4",
         "spryker-sdk/phpstan-spryker": "^0.4.0",
         "spryker/architecture-sniffer": "^0.5.7",
-        "overtrue/phplint": "^9.0",
-        "php-parallel-lint/php-var-dump-check": "^0.5.0"
+        "overtrue/phplint": "^9.0.4",
+        "php-parallel-lint/php-var-dump-check": "^0.5.0",
+        "spryker/console": "^4.12"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": [
         {
             "url": "https://github.com/valantic-CEC-Deutschland-GmbH/open-ai.git",
