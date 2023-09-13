@@ -6,6 +6,7 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever\DataRetrieverInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever\OpenApi\OpenAiDataRetriever;
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever\Upc\UpcDataRetriever;
+use SprykerCommunity\Zed\ProductGtinCraftor\Business\ProductCraftor\ProductCraftor;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Client\ProductGtinCraftorToUpcDatabaseClientInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToLocaleFacadeInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToOpenAiFacadeInterface;
@@ -19,7 +20,11 @@ class ProductGtinCraftorBusinessFactory extends AbstractBusinessFactory
 
     public function createProductCraftor()
     {
-
+        new ProductCraftor(
+            $this->createUpcDataRetriever(),
+            $this->createOpenAiDataRetriever(),
+            $this->getProductFacade()
+        );
     }
 
     /**
@@ -54,5 +59,10 @@ class ProductGtinCraftorBusinessFactory extends AbstractBusinessFactory
     protected function getLocaleFacade(): ProductGtinCraftorToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(ProductGtinCraftorDependencyProvider::FACADE_LOCALE);
+    }
+
+    protected function getProductFacade(): ProductGtinCraftorToLocaleFacadeInterface
+    {
+        return $this->getProvidedDependency(ProductGtinCraftorDependencyProvider::FACADE_PRODUCT);
     }
 }
