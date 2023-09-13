@@ -7,6 +7,7 @@ use SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever\DataRetriever
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever\OpenApi\OpenAiDataRetriever;
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\DataRetriever\Upc\UpcDataRetriever;
 use SprykerCommunity\Zed\ProductGtinCraftor\Business\ProductCraftor\ProductCraftor;
+use SprykerCommunity\Zed\ProductGtinCraftor\Business\ProductCraftor\ProductCraftorInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Client\ProductGtinCraftorToUpcDatabaseClientInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToLocaleFacadeInterface;
 use SprykerCommunity\Zed\ProductGtinCraftor\Dependency\Facade\ProductGtinCraftorToOpenAiFacadeInterface;
@@ -18,7 +19,7 @@ use SprykerCommunity\Zed\ProductGtinCraftor\ProductGtinCraftorDependencyProvider
 class ProductGtinCraftorBusinessFactory extends AbstractBusinessFactory
 {
 
-    public function createProductCraftor()
+    public function createProductCraftor(): ProductCraftorInterface
     {
         new ProductCraftor(
             $this->createUpcDataRetriever(),

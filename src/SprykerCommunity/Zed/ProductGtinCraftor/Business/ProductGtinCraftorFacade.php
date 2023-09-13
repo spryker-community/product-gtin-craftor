@@ -10,6 +10,9 @@ namespace SprykerCommunity\Zed\ProductGtinCraftor\Business;
 use Generated\Shared\Transfer\ProductAbstractTransfer;
 use Spryker\Zed\Kernel\Business\AbstractFacade;
 
+/**
+ * @method ProductGtinCraftorBusinessFactory getFactory()
+ */
 class ProductGtinCraftorFacade extends AbstractFacade implements ProductGtinCraftorFacadeInterface
 {
     /**
@@ -52,5 +55,10 @@ class ProductGtinCraftorFacade extends AbstractFacade implements ProductGtinCraf
     public function expandProductAbsractWithLMIVData(ProductAbstractTransfer $productAbstractTransfer): ProductAbstractTransfer
     {
         return $productAbstractTransfer;
+    }
+
+    public function craftProduct(string $gtin, string $abstractSKU, ?int $price)
+    {
+        return $this->getFactory()->createProductCraftor()->craftProduct($gtin, $abstractSKU, $price);
     }
 }
